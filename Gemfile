@@ -7,6 +7,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 5.2'
 gem 'sass-rails', '~> 5.0'
+gem 'slim-rails'
 gem 'sqlite3'
 gem 'uglifier', '>= 1.3.0'
 
