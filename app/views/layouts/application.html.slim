@@ -1,11 +1,21 @@
 doctype html
-html
+html.govuk-template lang="en"
   head
-    title GovukService
-    = csrf_meta_tags
-    = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    title = t('.html_title')
+    meta content="text/html; charset=UTF-8" http-equiv="Content-Type"
+    meta charset="utf-8"
+    meta content="#0b0c0c" name="theme-color"
+    meta content="width=device-width, initial-scale=1" name="viewport"
 
-  body
-    = yield
+    link href="#{asset_path 'favicon.ico'}" rel="shortcut icon" type="image/x-icon"
+
+    = stylesheet_link_tag 'main', media: 'all'
+
+  body.govuk-template__body
+    javascript:
+      document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+
+    = render 'layouts/header'
+    = render 'layouts/main'
+    = render 'layouts/footer'
+    = render 'layouts/javascripts'
